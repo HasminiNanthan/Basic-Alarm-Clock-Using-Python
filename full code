@@ -1,0 +1,31 @@
+#-------------------------------------------------------------------------------
+# Name:        Basic Digital Clock
+# Purpose:     Learning Python
+#
+# Author:      HASMINI NANTHAN
+#
+# Created:     07/09/2023
+# Copyright:   (c) HASMINI NANTHAN 2023
+# Licence:     <your licence>
+#-------------------------------------------------------------------------------
+import time
+from tkinter import *
+root = Tk()
+root.title("Digital Clock")
+root.geometry("455x180+0+0")
+root.resizable(0,0)
+
+
+def clk():
+    text_input = time.strftime("%H:%M:%S")
+    label.config(text=text_input)
+    label.after(200, clk)
+
+label = Label(root, font=("Arial", 70, 'bold'), bg="light green", fg="black", bd =40)
+label.grid(row =0, column=1)
+clk()
+
+print('done')
+
+
+root.mainloop()
